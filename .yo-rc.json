@@ -1,0 +1,75 @@
+{
+    "generator-jhipster": {
+        "promptValues": {
+            "packageName": "com.bhsoft.ecomab",
+            "nativeLanguage": "fr"
+        },
+        "jhipsterVersion": "5.8.2",
+        "applicationType": "monolith",
+        "baseName": "primeng",
+        "packageName": "com.bhsoft.ecomab",
+        "packageFolder": "com/bhsoft/ecomab",
+        "serverPort": "8080",
+        "authenticationType": "jwt",
+        "cacheProvider": "ehcache",
+        "enableHibernateCache": true,
+        "websocket": false,
+        "databaseType": "sql",
+        "devDatabaseType": "h2Disk",
+        "prodDatabaseType": "postgresql",
+        "searchEngine": "elasticsearch",
+        "messageBroker": false,
+        "serviceDiscoveryType": false,
+        "buildTool": "maven",
+        "enableSwaggerCodegen": false,
+        "jwtSecretKey": "MWQwNTY4NzE5NGYzZTViMzM5NjEwODQ0OWI1Nzg0N2U5YjBkNmJjZGYwM2MyZDEwMDkwODVlNGY4ZjY4ZDFjZDRhODhjZmZlOTRkNGIwOWQ0YzMwNDdjMTIzNjM2NTFlMDk2NTAxYjg1MDI0YmRlMjlhOTg1YjY0OGJlNmYwZmQ=",
+        "clientFramework": "angularX",
+        "useSass": true,
+        "clientPackageManager": "npm",
+        "testFrameworks": [],
+        "jhiPrefix": "jhi",
+        "entitySuffix": "",
+        "dtoSuffix": "DTO",
+        "otherModules": [
+            {
+                "name": "generator-jhipster-primeng",
+                "version": "2.3.0"
+            },
+            {
+                "name": "generator-jhipster-primeng-charts",
+                "version": "1.2.0"
+            },
+            {
+                "name": "generator-jhipster-audit-helper",
+                "version": "1.0.3"
+            },
+            {
+                "name": "generator-jhipster-leafletmap",
+                "version": "2.0.0"
+            },
+            {
+                "name": "generator-jhipster-stripe-payment",
+                "version": "1.0.9"
+            },
+            {
+                "name": "generator-jhipster-paypal",
+                "version": "1.0.5"
+            },
+            {
+                "name": "generator-jhipster-administration-database",
+                "version": "1.0.4"
+            },
+            {
+                "name": "generator-jhipster-kutilang",
+                "version": "0.0.4"
+            },
+            {
+                "name": "generator-jhipster-nav-element",
+                "version": "2.1.4"
+            }
+        ],
+        "enableTranslation": true,
+        "nativeLanguage": "fr",
+        "languages": ["fr", "ar-ly", "en", "es"]
+    }
+}
