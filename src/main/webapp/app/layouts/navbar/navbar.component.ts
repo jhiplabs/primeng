@@ -11,7 +11,7 @@ import { SbService } from 'app/layouts/main/sb-service.service';
 
 @Component({
     selector: 'jhi-navbar',
-    templateUrl: './navbar.component.html',
+    templateUrl: './light-navbar.component.html',
     styleUrls: ['navbar.scss']
 })
 export class NavbarComponent implements OnInit {
