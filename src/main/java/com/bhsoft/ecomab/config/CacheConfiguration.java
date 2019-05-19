@@ -38,6 +38,16 @@ public class CacheConfiguration {
             cm.createCache(com.bhsoft.ecomab.domain.User.class.getName(), jcacheConfiguration);
             cm.createCache(com.bhsoft.ecomab.domain.Authority.class.getName(), jcacheConfiguration);
             cm.createCache(com.bhsoft.ecomab.domain.User.class.getName() + ".authorities", jcacheConfiguration);
+            cm.createCache(com.bhsoft.ecomab.domain.Category.class.getName(), jcacheConfiguration);
+            cm.createCache(com.bhsoft.ecomab.domain.Category.class.getName() + ".products", jcacheConfiguration);
+            cm.createCache(com.bhsoft.ecomab.domain.Product.class.getName(), jcacheConfiguration);
+            cm.createCache(com.bhsoft.ecomab.domain.Product.class.getName() + ".categories", jcacheConfiguration);
+            cm.createCache(com.bhsoft.ecomab.domain.Customer.class.getName(), jcacheConfiguration);
+            cm.createCache(com.bhsoft.ecomab.domain.Customer.class.getName() + ".wishLists", jcacheConfiguration);
+            cm.createCache(com.bhsoft.ecomab.domain.Customer.class.getName() + ".addresses", jcacheConfiguration);
+            cm.createCache(com.bhsoft.ecomab.domain.Address.class.getName(), jcacheConfiguration);
+            cm.createCache(com.bhsoft.ecomab.domain.WishList.class.getName(), jcacheConfiguration);
+            cm.createCache(com.bhsoft.ecomab.domain.WishList.class.getName() + ".products", jcacheConfiguration);
             // jhipster-needle-ehcache-add-entry
         };
     }

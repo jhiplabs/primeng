@@ -18,8 +18,10 @@ import { PrimengHomeModule } from './home/home.module';
 import { PrimengAccountModule } from './account/account.module';
 import { PrimengEntityModule } from './entities/entity.module';
 import * as moment from 'moment';
+import { PrimengprimengModule } from './primeng/primeng.module';
 // jhipster-needle-angular-add-module-import JHipster will add new module here
 import { JhiMainComponent, NavbarComponent, FooterComponent, PageRibbonComponent, ActiveMenuDirective, ErrorComponent } from './layouts';
+import { SidebarModule } from 'primeng/primeng';
 
 @NgModule({
     imports: [
@@ -36,9 +38,11 @@ import { JhiMainComponent, NavbarComponent, FooterComponent, PageRibbonComponent
         PrimengCoreModule,
         PrimengHomeModule,
         PrimengAccountModule,
+        PrimengprimengModule,
         // jhipster-needle-angular-add-module JHipster will add new module here
         PrimengEntityModule,
-        PrimengAppRoutingModule
+        PrimengAppRoutingModule,
+        SidebarModule
     ],
     declarations: [JhiMainComponent, NavbarComponent, ErrorComponent, PageRibbonComponent, ActiveMenuDirective, FooterComponent],
     providers: [
