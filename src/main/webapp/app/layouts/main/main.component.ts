@@ -2,13 +2,19 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRouteSnapshot, NavigationEnd, NavigationError } from '@angular/router';
 
 import { JhiLanguageHelper } from 'app/core';
+import { PanelMenuModule } from 'primeng/panelmenu';
+import { MenuItem } from 'primeng/api';
+import { SbService } from 'app/layouts/main/sb-service.service';
 
 @Component({
     selector: 'jhi-main',
-    templateUrl: './main.component.html'
+    templateUrl: './main.component.html',
+    styleUrls: ['main.css']
 })
 export class JhiMainComponent implements OnInit {
-    constructor(private jhiLanguageHelper: JhiLanguageHelper, private router: Router) {}
+    items: MenuItem[];
+
+    constructor(private jhiLanguageHelper: JhiLanguageHelper, private router: Router, private sbService: SbService) {}
 
     private getPageTitle(routeSnapshot: ActivatedRouteSnapshot) {
         let title: string = routeSnapshot.data && routeSnapshot.data['pageTitle'] ? routeSnapshot.data['pageTitle'] : 'primengApp';
@@ -17,8 +23,6 @@ export class JhiMainComponent implements OnInit {
         }
         return title;
     }
-
-    items: MenuItem[];
 
     ngOnInit() {
         this.router.events.subscribe(event => {
@@ -32,71 +36,11 @@ export class JhiMainComponent implements OnInit {
         this.intitMenu();
     }
 
+    toggleSbar() {
+        this.sbService.toggleSbar();
+    }
+
     private intitMenu() {
-        his.items = [
-            {
-                label: 'File',
-                icon: 'pi pi-pw pi-file',
-                items: [
-                    {
-                        label: 'New',
-                        icon: 'pi pi-fw pi-plus',
-                        items: [{ label: 'User', icon: 'pi pi-fw pi-user-plus' }, { label: 'Filter', icon: 'pi pi-fw pi-filter' }]
-                    },
-                    { label: 'Open', icon: 'pi pi-fw pi-external-link' },
-                    { separator: true },
-                    { label: 'Quit', icon: 'pi pi-fw pi-times' }
-                ]
-            },
-            {
-                label: 'Edit',
-                icon: 'pi pi-fw pi-pencil',
-                items: [{ label: 'Delete', icon: 'pi pi-fw pi-trash' }, { label: 'Refresh', icon: 'pi pi-fw pi-refresh' }]
-            },
-            {
-                label: 'Help',
-                icon: 'pi pi-fw pi-question',
-                items: [
-                    {
-                        label: 'Contents',
-                        icon: 'pi pi-pi pi-bars'
-                    },
-                    {
-                        label: 'Search',
-                        icon: 'pi pi-pi pi-search',
-                        items: [
-                            {
-                                label: 'Text',
-                                items: [
-                                    {
-                                        label: 'Workspace'
-                                    }
-                                ]
-                            },
-                            {
-                                label: 'User',
-                                icon: 'pi pi-fw pi-file'
-                            }
-                        ]
-                    }
-                ]
-            },
-            {
-                label: 'Actions',
-                icon: 'pi pi-fw pi-cog',
-                items: [
-                    {
-                        label: 'Edit',
-                        icon: 'pi pi-fw pi-pencil',
-                        items: [{ label: 'Save', icon: 'pi pi-fw pi-save' }, { label: 'Update', icon: 'pi pi-fw pi-save' }]
-                    },
-                    {
-                        label: 'Other',
-                        icon: 'pi pi-fw pi-tags',
-                        items: [{ label: 'Delete', icon: 'pi pi-fw pi-minus' }]
-                    }
-                ]
-            }
-        ];
+        this.items = this.sbService.intitMenu();
     }
 }

@@ -21,7 +21,7 @@ import * as moment from 'moment';
 import { PrimengprimengModule } from './primeng/primeng.module';
 // jhipster-needle-angular-add-module-import JHipster will add new module here
 import { JhiMainComponent, NavbarComponent, FooterComponent, PageRibbonComponent, ActiveMenuDirective, ErrorComponent } from './layouts';
-import { SidebarModule } from 'primeng/primeng';
+import { PanelMenuModule, SidebarModule } from 'primeng/primeng';
 
 @NgModule({
     imports: [
@@ -42,7 +42,8 @@ import { SidebarModule } from 'primeng/primeng';
         // jhipster-needle-angular-add-module JHipster will add new module here
         PrimengEntityModule,
         PrimengAppRoutingModule,
-        SidebarModule
+        SidebarModule,
+        PanelMenuModule
     ],
     declarations: [JhiMainComponent, NavbarComponent, ErrorComponent, PageRibbonComponent, ActiveMenuDirective, FooterComponent],
     providers: [

@@ -1,11 +1,27 @@
 <jhi-page-ribbon></jhi-page-ribbon>
-<div>
-    <p-panelMenu [model]="items" [style]="{'width':'300px'}"></p-panelMenu>
-</div>
-<div class="container-fluid">
-    <div class="card jh-card">
-        <router-outlet></router-outlet>
-        <router-outlet name="popup"></router-outlet>
+<div class="d-flex" id="wrapper" [ngClass]="sbService.sbToggled ? 'toggled' : ''">
+
+    <!-- Sidebar -->
+    <div class="bg-light border-right" id="sidebar-wrapper">
+        <div class="sidebar-heading">Start Bootstrap </div>
+        <p-panelMenu [model]="items" [style]="{'width':'300px'}"></p-panelMenu>
     </div>
-    <jhi-footer></jhi-footer>
+    <!-- /#sidebar-wrapper -->
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+        <router-outlet name="navbar"></router-outlet>
+
+        <div class="container-fluid">
+            <div class="card jh-card">
+                <router-outlet></router-outlet>
+                <router-outlet name="popup"></router-outlet>
+            </div>
+            <jhi-footer></jhi-footer>
+        </div>
+    </div>
+    <!-- /#page-content-wrapper -->
+
 </div>
+<!-- /#wrapper -->
+
